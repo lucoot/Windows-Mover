@@ -1,2 +1,2 @@
-WinMover.exe
+WinMoverLC.exe
 pause

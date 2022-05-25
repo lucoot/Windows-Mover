@@ -1,8 +1,8 @@
 {
   "sdk": 3,
   "version": 2100,
-  "name": "Windows Mover",
-  "id": "WindowMover",
+  "name": "Windows Mover LC",
+  "id": "WindowMoverLC",
   "configuration": {
     "colorDark": "#222423",
     "colorLight": "#020202"
@@ -11,7 +11,7 @@
 	{
       "name": "Build by",
       "type": "text",
-      "default": "Killer_BOSS",
+      "default": "otis",
       "readOnly": true
     },
 	{
@@ -27,23 +27,23 @@
       "readOnly": true
     }
   ],
-  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%Window-Mover\\StartWinMover.bat",
+  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%Window-Mover-LC\\StartWinMoverLC.bat",
   "categories": [
     {
       "id": "Main",
-      "name": "Window Mover",
-      "imagepath": "%TP_PLUGIN_FOLDER%Window-Mover\\icon.png",
+      "name": "Window Mover LC LC",
+      "imagepath": "%TP_PLUGIN_FOLDER%Window-Mover-LC\\icon.png",
       "actions": [
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets",
-          "name": "Window Mover: Simple Move Window by presets",
+          "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets",
+          "name": "Window Mover LC: Simple Move Window by presets",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Move {$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$} on Display:{$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Displays$} to {$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Presets$} Allow Resize:{$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.AllowResize$}",
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.AllowResize$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Presets",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Presets",
               "type": "choice",
               "label": "choice",
               "default": "Top Left",
@@ -60,20 +60,20 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Displays",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Displays",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.AllowResize",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.AllowResize",
               "type": "choice",
               "label": "choice",
               "default": "True",
@@ -85,37 +85,37 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY",
-          "name": "Window Mover: Simple Increase X, Y",
+          "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY",
+          "name": "Window Mover LC: Simple Increase X, Y",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
           "hasHoldFunctionality": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Choice$} Window:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$} by X:{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.X$} and Y:{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Y$}",
+          "format": "{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$} by X:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.X$} and Y:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Y$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.X",
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.X",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Y",
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Y",
               "label": "Move By Y",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Choice",
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Choice",
               "label": "Update Choice",
               "type": "choice",
               "default": "Increase",
@@ -127,29 +127,29 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo",
-          "name": "Window Mover: Simple Resize Window",
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo",
+          "name": "Window Mover LC: Simple Resize Window",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Set {$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$} Size to width:{$KillerBOSS.TP.Plugins.WindowMover.ResizeTo.width$} and height:{$KillerBOSS.TP.Plugins.WindowMover.ResizeTo.height$}",
+          "format": "Set {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} Size to width:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.width$} and height:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.width",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 400
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.height",
               "label": "Move By Y",
               "type": "number",
               "allowDecimals": false,
@@ -158,16 +158,16 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease",
-          "name": "Window Mover: Simple Resize Increase Width, hight",
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease",
+          "name": "Window Mover LC: Simple Resize Increase Width, hight",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
           "hasHoldFunctionality": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.In&Decre$}Window:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$}by Width:{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.width$} and Height:{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.height$}",
+          "format": "{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.In&Decre$}Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$}by Width:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.In&Decre",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.In&Decre",
               "type": "choice",
               "label": "choice",
               "default": "Increase",
@@ -177,21 +177,21 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.width",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.height",
               "label": "Move By Y",
               "type": "number",
               "allowDecimals": false,
@@ -200,15 +200,15 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.SysActions",
-          "name": "Window Mover: Simple focus, restore, minimize, and restore",
+          "id": "otis.TP.Plugins.WindowMoverLC.SysActions",
+          "name": "Window Mover LC: Simple focus, restore, minimize, and restore",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.SysActions.Choice$} Window:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$}",
+          "format": "{$otis.TP.Plugins.WindowMoverLC.SysActions.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.SysActions.Choice",
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Choice",
               "type": "choice",
               "label": "choice",
               "default": "maximize",
@@ -221,7 +221,7 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
@@ -230,40 +230,40 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.customMove",
-          "name": "Window Mover: Simple Move Window by current data",
+          "id": "otis.TP.Plugins.WindowMoverLC.customMove",
+          "name": "Window Mover LC: Simple Move Window by current data",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Load {$KillerBOSS.TP.Plugins.WindowMover.customMove.Window$} with X:{$KillerBOSS.TP.Plugins.WindowMover.customMove.X$}Y:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Y$}Width:{$KillerBOSS.TP.Plugins.WindowMover.customMove.width$}height:{$KillerBOSS.TP.Plugins.WindowMover.customMove.height$}",
+          "format": "Load {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} with X:{$otis.TP.Plugins.WindowMoverLC.customMove.X$}Y:{$otis.TP.Plugins.WindowMoverLC.customMove.Y$}Width:{$otis.TP.Plugins.WindowMoverLC.customMove.width$}height:{$otis.TP.Plugins.WindowMoverLC.customMove.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
               "label": "Window",
               "type": "choice",
               "default": "",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.X",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.X",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Y",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Y",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.width",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.height",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
@@ -271,15 +271,15 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.Advanced.Windowpresets",
-          "name": "Window Mover: Advanced Move Window by presets",
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpresets",
+          "name": "Window Mover LC: Advanced Move Window by presets",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Move {$KillerBOSS.TP.Plugins.WindowMover.Advanced.Windowpreset.Window$} on Display:{$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.Displays$} to {$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.Presets$} Allow Resize:{$KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.AllowResize$}",
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.Presets",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets",
               "type": "choice",
               "label": "choice",
               "default": "Top Left",
@@ -291,19 +291,19 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Advanced.Windowpreset.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window",
               "label": "Window",
               "type": "text",
               "default": ""
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.Displays",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays",
               "type": "choice",
               "label": "choice",
               "valueChoices": []
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.Windowpresets.Advanced.AllowResize",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize",
               "type": "choice",
               "label": "choice",
               "default": "True",
@@ -313,38 +313,84 @@
               ]
             }
           ]
-        },
+        }
+        ,
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.Advanced.MoveByXandY",
-          "name": "Window Mover: Advanced  Increase X, Y",
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpresets",
+          "name": "Window Mover LC: Advanced Move Window by presets LC",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "hasHoldFunctionality": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Choice$} Window:{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Window$} by X:{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.X$} and Y:{$KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Y$}",
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets",
+              "type": "choice",
+              "label": "choice",
+              "default": "Top Left",
+              "valueChoices": [
+                "Top Left",
+                "Top Right",
+                "Bottom Left",
+                "Bottom Right"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window",
               "label": "Window",
               "type": "text",
               "default": ""
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.X",
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize",
+              "type": "choice",
+              "label": "choice",
+              "default": "True",
+              "valueChoices": [
+                "True",
+                "False"
+              ]
+            }
+          ]
+        }
+        ,
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.MoveByXandY",
+          "name": "Window Mover LC: Advanced  Increase X, Y",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Window$} by X:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.X$} and Y:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Y$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.X",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Y",
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Y",
               "label": "Move By Y",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.MoveByXandY.Advanced.Choice",
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Choice",
               "label": "Update Choice",
               "type": "choice",
               "default": "Increase",
@@ -356,28 +402,28 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced",
-          "name": "Window Mover: Advanced Resize Window",
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced",
+          "name": "Window Mover LC: Advanced Resize Window",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Set {$KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.Window$} width:{$KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.width$} and Height:{$KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.height$}",
+          "format": "Set {$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.Window$} width:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.Window",
               "label": "Window",
               "type": "test",
               "default": ""
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.width",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 400
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeTo.Advanced.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.height",
               "label": "Move By Y",
               "type": "number",
               "allowDecimals": false,
@@ -386,16 +432,16 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced",
-          "name": "Window Mover: Advanced Resize Increase Width, hight",
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced",
+          "name": "Window Mover LC: Advanced Resize Increase Width, hight",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
           "hasHoldFunctionality": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.In&Decre$}Window:{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.Window$}by Width:{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.width$} and Height:{$KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.height$}",
+          "format": "{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.In&Decre$}Window:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.Window$}by Width:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.In&Decre",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.In&Decre",
               "type": "choice",
               "label": "choice",
               "default": "Increase",
@@ -405,20 +451,20 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.Window",
               "label": "Window",
               "type": "text",
               "default": ""
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.width",
               "label": "Move By X",
               "type": "number",
               "allowDecimals": false,
               "default": 1
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.ResizeIncrease.Advanced.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.height",
               "label": "Increase height",
               "type": "number",
               "allowDecimals": false,
@@ -427,15 +473,15 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.SysActions.Advanced",
-          "name": "Window Mover: Advanced focus, restore, minimize, and restore",
+          "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced",
+          "name": "Window Mover LC: Advanced focus, restore, minimize, and restore",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "{$KillerBOSS.TP.Plugins.WindowMover.SysActions.Advanced.Choice$} Window:{$KillerBOSS.TP.Plugins.WindowMover.SysActions.Advanced.Window$}",
+          "format": "{$otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Window$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.SysActions.Advanced.Choice",
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Choice",
               "type": "choice",
               "label": "choice",
               "default": "maximize",
@@ -448,7 +494,7 @@
               ]
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.SysActions.Advanced.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Window",
               "label": "Window",
               "type": "text",
               "default": ""
@@ -456,42 +502,42 @@
           ]
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.Advanced.customMove",
-          "name": "Window Mover: Advanced Move Window by current data",
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.customMove",
+          "name": "Window Mover LC: Advanced Move Window by current data",
           "prefix": "plugin",
           "type": "communicate",
           "tryInline": true,
-          "format": "Load {$KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.Window$} with X:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.X$}Y:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.Y$}Width:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.width$}height:{$KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.height$}",
+          "format": "Load {$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Window$} with X:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.X$}Y:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Y$}Width:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.width$}height:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.height$}",
           "data": [
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.Window",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Window",
               "label": "Window",
               "type": "text",
               "default": ""
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.X",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.X",
               "type": "number",
               "label": "choice",
               "default": 0,
               "allowDecimals": false
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.Y",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Y",
               "type": "number",
               "label": "choice",
               "default": 0,
               "allowDecimals": false
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.width",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.width",
               "type": "number",
               "label": "choice",
               "default": 0,
               "allowDecimals": false
             },
             {
-              "id": "KillerBOSS.TP.Plugins.WindowMover.customMove.Advanced.height",
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.height",
               "type": "number",
               "label": "choice",
               "default": 0,
@@ -503,51 +549,51 @@
       "events": [],
       "states": [
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.ActiveWindow",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow",
           "type": "text",
-          "desc": "Window Mover: Current Active Window",
+          "desc": "Window Mover LC: Current Active Window",
           "default": "None"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.ActiveWindow.X",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.X",
           "type": "text",
-          "desc": "Window Mover: Current Active Window X pos",
+          "desc": "Window Mover LC: Current Active Window X pos",
           "default": "None"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.ActiveWindow.Y",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.Y",
           "type": "text",
-          "desc": "Window Mover: Current Active Window Y pos",
+          "desc": "Window Mover LC: Current Active Window Y pos",
           "default": "None"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.ActiveWindow.width",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.width",
           "type": "text",
-          "desc": "Window Mover: Current Active Window Width",
+          "desc": "Window Mover LC: Current Active Window Width",
           "default": "None"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.ActiveWindow.height",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.height",
           "type": "text",
-          "desc": "Window Mover: Current Active Window height",
+          "desc": "Window Mover LC: Current Active Window height",
           "default": "None"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.isCurrentWindowMaximized",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowMaximized",
           "type": "text",
-          "desc": "Window Mover: is Current Window Maximized",
+          "desc": "Window Mover LC: is Current Window Maximized",
           "default": "False"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.isCurrentWindowminimize",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowminimize",
           "type": "text",
-          "desc": "Window Mover: is Current Window minimized",
+          "desc": "Window Mover LC: is Current Window minimized",
           "default": "False"
         },
         {
-          "id": "KillerBOSS.TP.Plugins.WindowMover.states.isCurrentWindowActive",
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowActive",
           "type": "text",
-          "desc": "Window Mover: is Current Window Active",
+          "desc": "Window Mover LC: is Current Window Active",
           "default": "False"
         }
       ]

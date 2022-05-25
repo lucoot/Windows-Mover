@@ -1,0 +1,1 @@
+Powershell Start-Process WinMoverLC.exe -WindowStyle hidden -Verb RunAs

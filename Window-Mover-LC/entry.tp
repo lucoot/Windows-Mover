@@ -1,0 +1,602 @@
+{
+  "sdk": 3,
+  "version": 2100,
+  "name": "Windows Mover LC",
+  "id": "WindowMoverLC",
+  "configuration": {
+    "colorDark": "#222423",
+    "colorLight": "#020202"
+  },
+  "settings": [
+	{
+      "name": "Build by",
+      "type": "text",
+      "default": "otis",
+      "readOnly": true
+    },
+	{
+      "name": "Version",
+      "type": "text",
+      "default": "0",
+      "readOnly": true
+    },
+    {
+      "name": "Is Running",
+      "type": "text",
+      "default": "False",
+      "readOnly": true
+    }
+  ],
+  "plugin_start_cmd": "%TP_PLUGIN_FOLDER%Window-Mover-LC\\StartWinMoverLC.bat",
+  "categories": [
+    {
+      "id": "Main",
+      "name": "Window Mover LC LC",
+      "imagepath": "%TP_PLUGIN_FOLDER%Window-Mover-LC\\icon.png",
+      "actions": [
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets",
+          "name": "Window Mover LC: Simple Move Window by presets",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.AllowResize$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Presets",
+              "type": "choice",
+              "label": "choice",
+              "default": "Top Left",
+              "valueChoices": [
+                "Top Left",
+                "Top Right",
+                "Top Middle",
+                "Bottom Left",
+                "Bottom Right",
+                "Bottom Middle",
+                "Left Middle",
+                "Right Middle",
+                "Center"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Displays",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.AllowResize",
+              "type": "choice",
+              "label": "choice",
+              "default": "True",
+              "valueChoices": [
+                "True",
+                "False"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY",
+          "name": "Window Mover LC: Simple Increase X, Y",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$} by X:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.X$} and Y:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Y$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.X",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Y",
+              "label": "Move By Y",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Choice",
+              "label": "Update Choice",
+              "type": "choice",
+              "default": "Increase",
+              "valueChoices": [
+                "Increase",
+                "Decrease"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo",
+          "name": "Window Mover LC: Simple Resize Window",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Set {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} Size to width:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.width$} and height:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.width",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 400
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.height",
+              "label": "Move By Y",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 400
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease",
+          "name": "Window Mover LC: Simple Resize Increase Width, hight",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.In&Decre$}Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$}by Width:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.In&Decre",
+              "type": "choice",
+              "label": "choice",
+              "default": "Increase",
+              "valueChoices": [
+                "Increase",
+                "Decrease"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.width",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.height",
+              "label": "Move By Y",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.SysActions",
+          "name": "Window Mover LC: Simple focus, restore, minimize, and restore",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.SysActions.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.customMove.Window$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Choice",
+              "type": "choice",
+              "label": "choice",
+              "default": "maximize",
+              "valueChoices": [
+                "maximize",
+                "minimize",
+                "restore",
+                "focus",
+                "close"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.customMove",
+          "name": "Window Mover LC: Simple Move Window by current data",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Load {$otis.TP.Plugins.WindowMoverLC.customMove.Window$} with X:{$otis.TP.Plugins.WindowMoverLC.customMove.X$}Y:{$otis.TP.Plugins.WindowMoverLC.customMove.Y$}Width:{$otis.TP.Plugins.WindowMoverLC.customMove.width$}height:{$otis.TP.Plugins.WindowMoverLC.customMove.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Window",
+              "label": "Window",
+              "type": "choice",
+              "default": "",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.X",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Y",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.width",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.height",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpresets",
+          "name": "Window Mover LC: Advanced Move Window by presets",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets",
+              "type": "choice",
+              "label": "choice",
+              "default": "Top Left",
+              "valueChoices": [
+                "Top Left",
+                "Top Right",
+                "Bottom Left",
+                "Bottom Right"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize",
+              "type": "choice",
+              "label": "choice",
+              "default": "True",
+              "valueChoices": [
+                "True",
+                "False"
+              ]
+            }
+          ]
+        }
+        ,
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpresets",
+          "name": "Window Mover LC: Advanced Move Window by presets LC",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Move {$otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window$} on Display:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays$} to {$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets$} Allow Resize:{$otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Presets",
+              "type": "choice",
+              "label": "choice",
+              "default": "Top Left",
+              "valueChoices": [
+                "Top Left",
+                "Top Right",
+                "Bottom Left",
+                "Bottom Right"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Advanced.Windowpreset.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.Displays",
+              "type": "choice",
+              "label": "choice",
+              "valueChoices": []
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.Windowpresets.Advanced.AllowResize",
+              "type": "choice",
+              "label": "choice",
+              "default": "True",
+              "valueChoices": [
+                "True",
+                "False"
+              ]
+            }
+          ]
+        }
+        ,
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.MoveByXandY",
+          "name": "Window Mover LC: Advanced  Increase X, Y",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Window$} by X:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.X$} and Y:{$otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Y$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.X",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Y",
+              "label": "Move By Y",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.MoveByXandY.Advanced.Choice",
+              "label": "Update Choice",
+              "type": "choice",
+              "default": "Increase",
+              "valueChoices": [
+                "Increase",
+                "Decrease"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced",
+          "name": "Window Mover LC: Advanced Resize Window",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Set {$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.Window$} width:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.Window",
+              "label": "Window",
+              "type": "test",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.width",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 400
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeTo.Advanced.height",
+              "label": "Move By Y",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 400
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced",
+          "name": "Window Mover LC: Advanced Resize Increase Width, hight",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "hasHoldFunctionality": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.In&Decre$}Window:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.Window$}by Width:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.width$} and Height:{$otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.In&Decre",
+              "type": "choice",
+              "label": "choice",
+              "default": "Increase",
+              "valueChoices": [
+                "Increase",
+                "Decrease"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.width",
+              "label": "Move By X",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.ResizeIncrease.Advanced.height",
+              "label": "Increase height",
+              "type": "number",
+              "allowDecimals": false,
+              "default": 1
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced",
+          "name": "Window Mover LC: Advanced focus, restore, minimize, and restore",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "{$otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Choice$} Window:{$otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Window$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Choice",
+              "type": "choice",
+              "label": "choice",
+              "default": "maximize",
+              "valueChoices": [
+                "maximize",
+                "minimize",
+                "restore",
+                "focus",
+                "close"
+              ]
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.SysActions.Advanced.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.Advanced.customMove",
+          "name": "Window Mover LC: Advanced Move Window by current data",
+          "prefix": "plugin",
+          "type": "communicate",
+          "tryInline": true,
+          "format": "Load {$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Window$} with X:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.X$}Y:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Y$}Width:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.width$}height:{$otis.TP.Plugins.WindowMoverLC.customMove.Advanced.height$}",
+          "data": [
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Window",
+              "label": "Window",
+              "type": "text",
+              "default": ""
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.X",
+              "type": "number",
+              "label": "choice",
+              "default": 0,
+              "allowDecimals": false
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.Y",
+              "type": "number",
+              "label": "choice",
+              "default": 0,
+              "allowDecimals": false
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.width",
+              "type": "number",
+              "label": "choice",
+              "default": 0,
+              "allowDecimals": false
+            },
+            {
+              "id": "otis.TP.Plugins.WindowMoverLC.customMove.Advanced.height",
+              "type": "number",
+              "label": "choice",
+              "default": 0,
+              "allowDecimals": false
+            }
+          ]
+        }
+      ],
+      "events": [],
+      "states": [
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow",
+          "type": "text",
+          "desc": "Window Mover LC: Current Active Window",
+          "default": "None"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.X",
+          "type": "text",
+          "desc": "Window Mover LC: Current Active Window X pos",
+          "default": "None"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.Y",
+          "type": "text",
+          "desc": "Window Mover LC: Current Active Window Y pos",
+          "default": "None"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.width",
+          "type": "text",
+          "desc": "Window Mover LC: Current Active Window Width",
+          "default": "None"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.ActiveWindow.height",
+          "type": "text",
+          "desc": "Window Mover LC: Current Active Window height",
+          "default": "None"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowMaximized",
+          "type": "text",
+          "desc": "Window Mover LC: is Current Window Maximized",
+          "default": "False"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowminimize",
+          "type": "text",
+          "desc": "Window Mover LC: is Current Window minimized",
+          "default": "False"
+        },
+        {
+          "id": "otis.TP.Plugins.WindowMoverLC.states.isCurrentWindowActive",
+          "type": "text",
+          "desc": "Window Mover LC: is Current Window Active",
+          "default": "False"
+        }
+      ]
+    }
+  ]
+}
